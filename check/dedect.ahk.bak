@@ -1,0 +1,17 @@
+﻿#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
+; #Warn  ; Enable warnings to assist with detecting common errors.
+SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
+SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
+if WinExist("Terraria Server: ACI") {
+FileAppend, blank`n, %A_WorkingDir%\yes.txt
+Sleep 5000
+FileDelete, %A_WorkingDir%\yes.txt
+} else if WinExist("Terraria Server v1.3.5.3 - tModLoader v0.11.8.6") {
+FileAppend, blank`n, %A_WorkingDir%\sorta.txt
+Sleep 5000
+FileDelete, %A_WorkingDir%\sorta.txt
+} else {
+FileAppend, blank`n, %A_WorkingDir%\no.txt
+Sleep 5000
+FileDelete, %A_WorkingDir%\no.txt
+}
